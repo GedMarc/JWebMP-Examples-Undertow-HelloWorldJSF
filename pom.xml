@@ -1,0 +1,196 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>com.jwebmp.examples.undertow</groupId>
+        <artifactId>jwebmp-examples-undertow</artifactId>
+        <version>0.0.0_0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>helloworld-jsf</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Undertow - Hello World JSF</name>
+    <description>An example Hello World Application for Undertow in the JWebSwing Framework
+    </description>
+    <url>https://github.com/GedMarc/JWebSwing-Examples/Undertow/HelloWorld</url>
+
+    <properties>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/GedMarc/JWebSwing-Examples/Undertow/HelloWorld/issues</url>
+    </issueManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.guicedee.servlets</groupId>
+            <artifactId>guiced-servlets-jsf</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.core</groupId>
+            <artifactId>jwebmp-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.core</groupId>
+            <artifactId>jwebmp-interception</artifactId>
+
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.guicedee.servlets</groupId>
+            <artifactId>guiced-undertow</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.guicedee.servlets</groupId>
+            <artifactId>guiced-websockets</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.guicedee.servlets</groupId>
+            <artifactId>guiced-servlets</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.guicedee</groupId>
+            <artifactId>guiced-injection</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.guicedee</groupId>
+            <artifactId>guiced-log-master</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jwebmp.inject.extensions</groupId>
+            <artifactId>guice-servlet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.undertow</groupId>
+            <artifactId>undertow-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.undertow</groupId>
+            <artifactId>undertow-servlet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.undertow</groupId>
+            <artifactId>undertow-websockets-jsr</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <scm>
+        <url>https://github.com/GedMarc/JWebMP</url>
+    </scm>
+
+    <ciManagement>
+        <system>TeamCity</system>
+        <url>http://jwebmp.com/teamcity</url>
+    </ciManagement>
+
+    <profiles>
+        <profile>
+            <id>jdk12</id>
+            <build>
+                <pluginManagement>
+
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <configuration>
+                                <source>1.8</source>
+                                <target>1.8</target>
+                                <encoding>UTF-8</encoding>
+                            </configuration>
+                        </plugin>
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <configuration>
+                                <detectJavaApiLink>false</detectJavaApiLink>
+                                <offlineLinks>
+                                    <offlineLink>
+                                        <!--suppress UnresolvedMavenProperty -->
+                                        <url>https://docs.oracle.com/javase/${maven.compiler.release}/docs/api/</url>
+                                        <location>${project.basedir}</location>
+                                    </offlineLink>
+                                </offlineLinks>
+                                <failOnError>false</failOnError>
+                                <javadocExecutable>/opt/jdk11/jdk-11/bin/javadoc</javadocExecutable>
+                                <additionalOptions>
+                                    <additionalOption>-Xdoclint:none</additionalOption>
+                                </additionalOptions>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadoc</id>
+                                </execution>
+                            </executions>
+                        </plugin>
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <configuration>
+                                <release>1.8</release>
+                                <annotationProcessorPaths>
+                                    <annotationProcessorPath>
+                                        <groupId>jakarta.xml.bind</groupId>
+                                        <artifactId>jakarta.xml.bind-api</artifactId>
+                                        <version>${glassfish.jaxb.version}</version>
+                                    </annotationProcessorPath>
+                                    <path>
+                                        <groupId>org.projectlombok</groupId>
+                                        <artifactId>lombok</artifactId>
+                                        <version>${lombok.version}</version>
+                                    </path>
+                                </annotationProcessorPaths>
+                                <annotationProcessors>
+                                    <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+                                </annotationProcessors>
+                                <compilerArguments>
+                                    <AaddGeneratedAnnotation>false</AaddGeneratedAnnotation>
+                                    <Adebug>true</Adebug>
+                                </compilerArguments>
+                                <failOnError>true</failOnError>
+                            </configuration>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.ow2.asm</groupId>
+                                    <artifactId>asm</artifactId>
+                                    <version>${maven.asm.version}</version>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+</project>
