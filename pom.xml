@@ -17,12 +17,6 @@
     </description>
     <url>https://github.com/GedMarc/JWebSwing-Examples/Undertow/HelloWorld</url>
 
-    <properties>
-
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-
     <issueManagement>
         <system>Github</system>
         <url>https://github.com/GedMarc/JWebSwing-Examples/Undertow/HelloWorld/issues</url>
@@ -30,7 +24,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.glassfish</groupId>
+            <groupId>com.jwebmp.thirdparty.faces</groupId>
             <artifactId>javax.faces</artifactId>
         </dependency>
 
@@ -113,84 +107,5 @@
     </ciManagement>
 
     <profiles>
-        <profile>
-            <id>jdk12</id>
-            <build>
-                <pluginManagement>
-
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-compiler-plugin</artifactId>
-                            <configuration>
-                                <source>1.8</source>
-                                <target>1.8</target>
-                                <encoding>UTF-8</encoding>
-                            </configuration>
-                        </plugin>
-
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <configuration>
-                                <detectJavaApiLink>false</detectJavaApiLink>
-                                <offlineLinks>
-                                    <offlineLink>
-                                        <!--suppress UnresolvedMavenProperty -->
-                                        <url>https://docs.oracle.com/javase/${maven.compiler.release}/docs/api/</url>
-                                        <location>${project.basedir}</location>
-                                    </offlineLink>
-                                </offlineLinks>
-                                <failOnError>false</failOnError>
-                                <javadocExecutable>/opt/jdk11/jdk-11/bin/javadoc</javadocExecutable>
-                                <additionalOptions>
-                                    <additionalOption>-Xdoclint:none</additionalOption>
-                                </additionalOptions>
-                            </configuration>
-                            <executions>
-                                <execution>
-                                    <id>attach-javadoc</id>
-                                </execution>
-                            </executions>
-                        </plugin>
-
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-compiler-plugin</artifactId>
-                            <configuration>
-                                <release>1.8</release>
-                                <annotationProcessorPaths>
-                                    <annotationProcessorPath>
-                                        <groupId>jakarta.xml.bind</groupId>
-                                        <artifactId>jakarta.xml.bind-api</artifactId>
-                                        <version>${glassfish.jaxb.version}</version>
-                                    </annotationProcessorPath>
-                                    <path>
-                                        <groupId>org.projectlombok</groupId>
-                                        <artifactId>lombok</artifactId>
-                                        <version>${lombok.version}</version>
-                                    </path>
-                                </annotationProcessorPaths>
-                                <annotationProcessors>
-                                    <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
-                                </annotationProcessors>
-                                <compilerArguments>
-                                    <AaddGeneratedAnnotation>false</AaddGeneratedAnnotation>
-                                    <Adebug>true</Adebug>
-                                </compilerArguments>
-                                <failOnError>true</failOnError>
-                            </configuration>
-                            <dependencies>
-                                <dependency>
-                                    <groupId>org.ow2.asm</groupId>
-                                    <artifactId>asm</artifactId>
-                                    <version>${maven.asm.version}</version>
-                                </dependency>
-                            </dependencies>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
     </profiles>
 </project>

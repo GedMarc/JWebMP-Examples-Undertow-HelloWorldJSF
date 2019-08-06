@@ -1,6 +1,3 @@
-import com.jwebmp.core.services.IPage;
-import com.jwebmp.examples.undertow.helloworld.HelloWorld;
-
 module com.jwebmp.examples.undertow.helloworld {
 
 	exports com.jwebmp.examples.undertow.helloworld to com.google.guice;
@@ -14,7 +11,7 @@ module com.jwebmp.examples.undertow.helloworld {
 	requires com.jwebmp.core;
 	requires com.jwebmp.undertow;
 
-	provides IPage with HelloWorld;
+	provides com.jwebmp.core.services.IPage with com.jwebmp.examples.undertow.helloworld.HelloWorld;
 
 	opens com.jwebmp.examples.undertow.helloworld to com.google.guice;
 }
