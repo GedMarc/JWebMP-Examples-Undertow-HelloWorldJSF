@@ -24,13 +24,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.jwebmp.thirdparty.faces</groupId>
+            <groupId>com.jwebmp.thirdparty</groupId>
             <artifactId>javax.faces</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.el</artifactId>
+            <groupId>com.jwebmp.thirdparty.gee4j</groupId>
+            <artifactId>jakarta.el</artifactId>
         </dependency>
 
         <dependency>
