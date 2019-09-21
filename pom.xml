@@ -23,14 +23,18 @@
     </issueManagement>
 
     <dependencies>
+
         <dependency>
             <groupId>com.jwebmp.thirdparty</groupId>
             <artifactId>javax.faces</artifactId>
+            <type>jar</type>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.thirdparty.gee4j</groupId>
             <artifactId>jakarta.el</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
@@ -42,58 +46,75 @@
         <dependency>
             <groupId>com.jwebmp.core</groupId>
             <artifactId>jwebmp-core</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.core</groupId>
             <artifactId>jwebmp-interception</artifactId>
+            <type>jar</type>
 
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.guicedee.servlets</groupId>
             <artifactId>guiced-undertow</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.guicedee.servlets</groupId>
             <artifactId>guiced-websockets</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.guicedee.servlets</groupId>
             <artifactId>guiced-servlets</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.guicedee</groupId>
             <artifactId>guiced-injection</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.guicedee</groupId>
             <artifactId>guiced-log-master</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.inject.extensions</groupId>
             <artifactId>guice-servlet</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.thirdparty.undertow</groupId>
             <artifactId>undertow-core</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.thirdparty.undertow</groupId>
             <artifactId>undertow-servlet</artifactId>
+            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.thirdparty.undertow</groupId>
             <artifactId>undertow-websockets-jsr</artifactId>
+            <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.jwebmp.thirdparty</groupId>
+            <artifactId>xnio-nio</artifactId>
+            <type>jar</type>
+        </dependency>
+
 
     </dependencies>
 
