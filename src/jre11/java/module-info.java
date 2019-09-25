@@ -1,3 +1,5 @@
+import com.jwebmp.examples.undertow.helloworld.HelloWorldJSF;
+
 module com.jwebmp.examples.undertow.helloworld.jsf {
 
 	exports com.jwebmp.examples.undertow.helloworld to com.google.guice;
@@ -17,7 +19,7 @@ module com.jwebmp.examples.undertow.helloworld.jsf {
 	requires xnio.api;
 	requires xnio;
 
-	provides com.jwebmp.core.services.IPage with com.jwebmp.examples.undertow.helloworld.HelloWorld;
+	provides com.jwebmp.core.services.IPage with HelloWorldJSF;
 
 	opens com.jwebmp.examples.undertow.helloworld to com.google.guice;
 }

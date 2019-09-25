@@ -31,16 +31,15 @@ import javax.servlet.ServletException;
 import java.util.ServiceLoader;
 import java.util.logging.Level;
 
-public class HelloWorld
+public class HelloWorldJSF
 		extends Page
 {
-	public HelloWorld()
+	public HelloWorldJSF()
 	{
 		super("Hello World!");
-		add(new Paragraph("Hello World"));
-		add(new Paragraph("Hello World 222"));
-		add(new Link<>("Click Here", "_blank").setText("Custom Link"));
-		add(new Strong("This is bold"));
+		add(new Paragraph("This page was rendered using JWebMP."));
+		add(new Paragraph("The faces servlet by default is set to serve at /faces/, but you can change this<br/>"));
+		add(new Link<>("faces/index.xhtml").setText("Click Here to visit Faces at the URL"));
 	}
 
 	/**
