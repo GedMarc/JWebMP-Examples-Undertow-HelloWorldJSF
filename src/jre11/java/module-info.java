@@ -5,7 +5,7 @@ module com.jwebmp.examples.undertow.helloworld.jsf {
 	exports com.jwebmp.examples.undertow.helloworld to com.google.guice;
 
 	requires javax.servlet.api;
-	requires com.jwebmp.guicedservlets.jsf;
+	requires com.guicedee.guicedservlets.jsf;
 
 	requires java.logging;
 
