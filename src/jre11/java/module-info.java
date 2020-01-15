@@ -7,13 +7,13 @@ module com.jwebmp.examples.undertow.helloworld.jsf {
 
 	requires java.logging;
 
-	requires jakarta.faces;
+	requires javax.faces;
 
 	requires undertow.core;
 	requires undertow.servlet;
 
 	requires com.jwebmp.core;
-	requires com.jwebmp.undertow;
+	requires com.guicedee.guicedservlets.undertow;
 	requires xnio.api;
 	requires xnio;
 

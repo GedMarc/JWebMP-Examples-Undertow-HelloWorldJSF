@@ -17,18 +17,14 @@
 
 package com.jwebmp.examples.undertow.helloworld;
 
+import com.guicedee.guicedservlets.undertow.GuicedUndertow;
+import com.guicedee.logger.LogFactory;
+import com.guicedee.logger.logging.LogColourFormatter;
 import com.jwebmp.core.Page;
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.Paragraph;
-import com.jwebmp.core.base.html.Strong;
-import com.guicedee.logger.LogFactory;
-import com.guicedee.logger.logging.LogColourFormatter;
-import com.jwebmp.undertow.GuicedUndertow;
-import org.xnio.Xnio;
-import org.xnio.XnioProvider;
 
 import javax.servlet.ServletException;
-import java.util.ServiceLoader;
 import java.util.logging.Level;
 
 public class HelloWorldJSF
