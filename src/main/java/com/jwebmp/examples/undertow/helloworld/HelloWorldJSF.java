@@ -24,7 +24,7 @@ import com.jwebmp.core.Page;
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.Paragraph;
 
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 import java.util.logging.Level;
 
 public class HelloWorldJSF

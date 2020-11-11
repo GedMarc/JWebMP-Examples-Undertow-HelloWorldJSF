@@ -7,7 +7,7 @@ module com.jwebmp.examples.undertow.helloworld.jsf {
 
 	requires java.logging;
 
-	requires javax.faces;
+	requires jakarta.faces;
 
 	requires undertow.core;
 	requires undertow.servlet;
