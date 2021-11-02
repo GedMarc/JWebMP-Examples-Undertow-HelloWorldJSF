@@ -25,13 +25,13 @@
     <dependencies>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>javax.faces</artifactId>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>jakarta.el</artifactId>
         </dependency>
 
@@ -71,21 +71,21 @@
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>undertow-core</artifactId>
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>undertow-servlet</artifactId>
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>undertow-websockets-jsr</artifactId>
         </dependency>
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>xnio-nio</artifactId>
         </dependency>
 
